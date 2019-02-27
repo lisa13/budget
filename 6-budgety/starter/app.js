@@ -232,7 +232,7 @@ var UIController = (function () {
         clearFields() {
             var fields, fieldsArr;
 
-            fields = document.querySelectorAll(DOMstrings.inputDescritpion + ', ' + DOMstrings.inputValue);
+            fields = document.querySelectorAll(DOMstrings.inputDescritpion + ',' + DOMstrings.inputValue + ',' + DOMstrings.inputType);
             fieldsArr = Array.prototype.slice.call(fields);
 
             fieldsArr.forEach(function (current, index, array) {
@@ -288,11 +288,11 @@ var UIController = (function () {
         changedType: function () {
 
             var fields = document.querySelectorAll(
-                DOMstrings.inputType + ',' + DOMstrings.inputDescription + ',' + DOMstrings.inputValue
+                DOMstrings.inputValue  + ',' + DOMstrings.inputDescritpion + ',' + DOMstrings.inputTypes
             );
 
-            nodeListFor(fields, function (cur) {
-                cur.classList.toggle('red-focus');
+            nodeListFor(fields, function (current) {
+                current.classList.toggle('red-focus');
             });
 
             document.querySelector(DOMstrings.addBtn).classList.toggle('red');
